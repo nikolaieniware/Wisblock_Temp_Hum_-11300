@@ -1,0 +1,16 @@
+function Decode(fPort, bytes, variables) {
+  var decoded = {};
+
+  if (fPort== 2)
+  {
+    var temp  = ((bytes[1]) << 8) | (bytes[2]);
+    temp = (temp/100.0);
+    decoded.temp = temp;
+
+    var hum  = ((bytes[3]) << 8) | (bytes[4]);
+    hum = (hum/100.0);
+    decoded.hum = hum;
+
+    return decoded;
+  }
+}
